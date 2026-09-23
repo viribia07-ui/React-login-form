@@ -9,8 +9,11 @@ export default class InputEmail extends React.Component {
         //console.log("handleEmailEdit e", e);
         console.log("handleEmailEdit e.nativeEvent.data", e.nativeEvent.data); //utolsó karater
         console.log("handleEmailEdit e", e.target?.value); //teljes email
-        const chr = e.nativeEvent?.value //e.nativeEvent.data helyett
-        this.setState({email: chr})
+        console.log("InputEmail e", e.props);
+        
+        const email = e.nativeEvent?.value //e.nativeEvent.data helyett
+        this.setState({email})
+        this.props.onEmailchange(email)
     }
 
     render() {
